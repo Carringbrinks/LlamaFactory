@@ -1,0 +1,34 @@
+deepspeed --master_port=25678 --num_gpus=8 src/train.py \
+    --model_name_or_path /home/cbsu/huggingface/Qwen2.5-VL-72B-Instruct \
+    --stage sft \
+    --do_train \
+    --finetuning_type lora \
+    --deepspeed ./ds_z3_offload_config.json \
+    --dataset zctech_vlm_train_data \
+    --template qwen2_vl \
+    --cutoff_len 4096 \
+    --overwrite_cache \
+    --preprocessing_num_workers 16 \
+    --output_dir train_mllm/qwen2.5_lora \
+    --logging_steps 1 \
+    --save_steps 0.6 \
+    --plot_loss true \
+    --overwrite_output_dir yes \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 2  \
+    --learning_rate 1e-5\
+    --warmup_ratio 0.05 \
+    --num_train_epochs 1.0 \
+    --lr_scheduler_type cosine \
+    --fp16 true \
+    --ddp_timeout 180000000 \
+    --eval_steps 50 \
+    --eval_strategy steps \
+    --val_size 0.1 \
+    --per_device_eval_batch_size 2 \
+    --trust_remote_code true \
+    --report_to swanlab \
+    --run_name qwen2_vl \
+    --save_only_model true \
+
+    

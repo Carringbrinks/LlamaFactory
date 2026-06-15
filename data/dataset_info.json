@@ -1,4 +1,42 @@
 {
+  "sft_identy": {
+    "file_name": "/data3/sft_data/train_sft/conversations_sft.jsonl",
+    "columns": {
+      "system": "system",
+      "query": "question",
+      "response": "chosen_answer"
+    }
+  },
+  "sft_general": {
+    "file_name": "/data3/sft_data/train_sft/qwen3_235b_2507_distill_110k_train_sft.jsonl",
+    "columns": {
+      "system": "system",
+      "query": "question",
+      "response": "chosen_answer"
+    }
+  },
+  "sft_textileai": {
+    "file_name": "/data3/sft_data/train_sft/textileai_data_dpo_valid_textileai_sft.jsonl",
+    "columns": {
+      "system": "system",
+      "query": "question",
+      "response": "chosen_answer"
+    }
+  },
+  "sft_textileai_general": {
+    "file_name": "/data3/sft_data/train_sft/textileai_data_dpo_valid_general_sft.jsonl",
+    "columns": {
+      "system": "system",
+      "query": "question",
+      "response": "chosen_answer"
+    }
+  },
+  "pretrain_data": {
+    "file_name": "/data3/pretrain_data/md_to_jsonl/train/train_pt/train_data_pt.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },
